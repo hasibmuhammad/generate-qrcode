@@ -12,6 +12,7 @@ def index():
 @app.route('/generate', methods=['POST', 'GET'])
 def generate():
     error = None
+    success = None
     if request.method == 'POST':
         url = request.form['url']
         size = request.form['size']
@@ -31,13 +32,14 @@ def generate():
             # using the make_image() function  
             img = qr.make_image(fill_color = (fillColor), back_color = (backColor))
             # saving the QR code image  
-            img.save("./qrcodes/" + str(time()) + ".png")  
+            img.save("./qrcodes/" + str(time()) + ".png")
+            success = "Successfully generated the Qrcode!"
+            return render_template('index.html', success=success)
         else:
             error = 'You must fill out the input'
+            return render_template('index.html', error=error)
     else:
-        return render_template('index.html')
-        
-    return redirect('/')
+        return redirect('/')
 
 
 if __name__ == '__main__':

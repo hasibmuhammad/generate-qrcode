@@ -6,12 +6,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="w-screen bg-red-400 px-16 py-6">
+    <div class="w-screen bg-red-400 px-16 py-6 overflow-hidden">
       <a href="/">
         <h1 class="text-white font-bold text-2xl md:text-3xl">GET QRCODE</h1>
       </a>
     </div>
-    <div class="w-2/5 mx-auto mt-32">
+    <div
+      class="w-1/5 md:w-2/5 mx-auto mt-32 flex flex-col justify-center items-center"
+    >
+      {%if success %}
+      <h1 class="w-2/3 text-center font-bold">{{success}}</h1>
+      {%endif%}
       <form action="/generate" method="POST" class="w-full max-w-lg">
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full px-3 mb-6 md:mb-0">
