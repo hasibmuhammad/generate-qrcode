@@ -8,7 +8,6 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-
 @app.route('/generate', methods=['POST', 'GET'])
 def generate():
     error = None
@@ -26,13 +25,13 @@ def generate():
                 box_size=size,
                 border=4,
             )
-            qr.add_data(url)  
+            qr.add_data(url) 
             # using the make() function  
             qr.make(fit = True)  
-            # using the make_image() function  
+            # using the make_image() function  ss
             img = qr.make_image(fill_color = (fillColor), back_color = (backColor))
             # saving the QR code image  
-            img.save("./qrcodes/" + str(time()) + ".png")
+            img.save("./qrcodes/" + str(time()) + ".jpg")
             success = "Successfully generated the Qrcode!"
             return render_template('index.html', success=success)
         else:

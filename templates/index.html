@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GET QRCODE | HASIB</title>
+    <link
+      href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AAKnAAB6MgAASlIAAEtCAAB7AAAAAnkAAP/YAACDBQAAUGMAAPy/AAACQAAAel4AAEpSAABK0gAAel4AAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      rel="icon"
+      type="image/x-icon"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
@@ -12,7 +18,7 @@
       </a>
     </div>
     <div
-      class="w-3/5 md:w-2/5 mx-auto mt-32 flex flex-col justify-center items-center"
+      class="w-2/5 md:w-2/5 mx-auto mt-32 flex flex-col justify-center items-center"
     >
       {%if success %}
       <h1 class="w-2/3 text-center font-bold">{{success}}</h1>
@@ -52,7 +58,7 @@
               >
                 <option value="">Select Size</option>
                 <option value="5">5</option>
-                <option value="10">10</option>
+                <option value="10">10(Standard)</option>
                 <option value="15">15</option>
                 <option value="20">20</option>
               </select>
@@ -109,8 +115,17 @@
         >
           Generate
         </button>
+        <p class="text-center mt-8">
+          Already have a qrcode?
+          <a
+            target="_blank"
+            href="https://4qrcode.com/scan-qr-code.php"
+            class="text-blue-600 underline"
+            >Upload here to read data!</a
+          >
+        </p>
       </form>
-      <footer class="mt-16">
+      <footer class="mt-24">
         <p>
           Built with ❤️ By -
           <a href="https://github.com/hasibmuhammad"> &copy; Hasib Muhammad</a>
